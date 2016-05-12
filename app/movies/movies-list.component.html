@@ -7,10 +7,10 @@
         
     <h3>Selected: {{selected}}</h3>    
 
-    <span *ngFor="let movie of movies | moviesFilter:filterText">
+    <section *ngFor="let movie of movies | moviesFilter:filterText" class="inline">
         <movie-card [movie]="movie"
                     (selected)="onSelected($event)"></movie-card>
-    </span>
+    </section>
     
 </div>
 
