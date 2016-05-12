@@ -1,0 +1,10 @@
+<div class="card">
+    <img src="img/{{ movie.imgUrl }}" 
+        [alt]="movie.name" 
+        [title]="movie.name">
+        
+    <section>
+        <header>{{movie.name}}</header>
+        <div class="genre">{{movie.genre | uppercase }}</div>
+    </section>
+</div>

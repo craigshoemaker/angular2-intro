@@ -6,17 +6,7 @@
         [(ngModel)]="filterText">
 
     <section *ngFor="let movie of movies | moviesFilter:filterText" class="inline">
-        <div class="card">
-            <img src="img/{{ movie.imgUrl }}" 
-                [alt]="movie.name" 
-                [title]="movie.name">
-                
-            <section>
-                <header>{{movie.name}}</header>
-                <div class="genre">{{movie.genre}}</div>
-            </section>
-        </div>
-
+        <movie-card [movie]="movie"></movie-card>
     </section>
     
 </div>
