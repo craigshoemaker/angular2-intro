@@ -1,6 +1,11 @@
 <div *ngIf="hasMovies()">
+    
+    <input type="search" 
+        placeholder="filter"
+        class="form-control"
+        [(ngModel)]="filterText">
 
-    <section *ngFor="let movie of movies" class="inline">
+    <section *ngFor="let movie of movies | moviesFilter:filterText" class="inline">
         <div class="card">
             <img src="img/{{ movie.imgUrl }}" 
                 [alt]="movie.name" 
