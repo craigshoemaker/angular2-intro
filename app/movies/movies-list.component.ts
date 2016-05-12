@@ -1,19 +1,21 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+
+import { IMovie } from './movie.interface';
+import { MoviesService } from './movies.service';
 
 @Component({
     selector: 'movies-list',
     templateUrl: 'app/movies/movies-list.component.html'
 })
-export class MoviesListComponent {
+export class MoviesListComponent implements OnInit {
     
-    movies: any[] = [
-        { name: 'The Matrix', genre: 'action', imgUrl: 'the-matrix.png' },
-        { name: 'A Few Good Men', genre: 'drama', imgUrl: 'a-few-good-men.png' },
-        { name: 'Ant-Man', genre: 'action', imgUrl: 'ant-man.png' },
-        { name: 'Dumb and Dumber', genre: 'comedy', imgUrl: 'dumb-and-dumber.png' },
-        { name: 'Good Will Hunting', genre: 'drama', imgUrl: 'good-will-hunting.png' },
-        { name: 'So I Married an Axe Murderer', genre: 'comedy', imgUrl: 'so-i-married-an-axe-murderer.png' }
-    ];
+    movies: IMovie[] = [];
+    
+    constructor(private _moviesService: MoviesService) { }
+
+    ngOnInit() { 
+        this.movies = this._moviesService.getAll();
+    }
     
     hasMovies(): boolean {
         return this.movies.length > 0;
