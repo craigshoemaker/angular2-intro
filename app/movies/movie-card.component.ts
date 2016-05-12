@@ -10,4 +10,9 @@ import { IMovie } from './movie.interface';
 export class MovieCardComponent {
     @Input() movie: IMovie;
     
+    @Output() selected: EventEmitter<IMovie> = new EventEmitter<IMovie>();
+    
+    onClick(): void {
+        this.selected.emit(this.movie);
+    }
 }

@@ -4,9 +4,12 @@
         placeholder="filter"
         class="form-control"
         [(ngModel)]="filterText">
+        
+    <h3>Selected: {{selected}}</h3>
 
     <section *ngFor="let movie of movies | moviesFilter:filterText" class="inline">
-        <movie-card [movie]="movie"></movie-card>
+        <movie-card [movie]="movie"
+                    (selected)="onSelected($event)"></movie-card>
     </section>
     
 </div>

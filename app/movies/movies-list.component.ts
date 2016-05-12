@@ -14,6 +14,7 @@ import { MovieCardComponent } from './movie-card.component';
 export class MoviesListComponent implements OnInit {
     
     filterText: string = '';
+    selected: string = '';
     movies: IMovie[] = [];
     
     constructor(private _moviesService: MoviesService) { }
@@ -24,6 +25,10 @@ export class MoviesListComponent implements OnInit {
     
     hasMovies(): boolean {
         return this.movies.length > 0;
-    } 
+    }
+    
+    onSelected(movie: IMovie) {
+        this.selected = movie.name;
+    }
     
 }
