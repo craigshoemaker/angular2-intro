@@ -1,16 +1,17 @@
 <div *ngIf="hasMovies()">
-    
-    <input type="search" 
-        placeholder="filter"
-        class="form-control"
-        [(ngModel)]="filterText">
-        
-    <h3>Selected: {{selected}}</h3>    
 
-    <span *ngFor="let movie of movies | moviesFilter:filterText">
-        <movie-card [movie]="movie"
-                    (selected)="onSelected($event)"></movie-card>
-    </span>
+    <section *ngFor="let movie of movies">
+        <div class="card">
+            <img src="img/{{ movie.imgUrl }}" 
+                [alt]="movie.name" 
+                [title]="movie.name">
+                
+            <section>
+                <header>{{movie.name}}</header>
+                <div class="genre">{{movie.genre}}</div>
+            </section>
+        </div>
+    </section>
     
 </div>
 
