@@ -1,6 +1,6 @@
 <div *ngIf="hasMovies()">
 
-    <section *ngFor="let movie of movies">
+    <section *ngFor="let movie of movies" class="inline">
         <div class="card">
             <img src="img/{{ movie.imgUrl }}" 
                 [alt]="movie.name" 
@@ -11,6 +11,7 @@
                 <div class="genre">{{movie.genre}}</div>
             </section>
         </div>
+
     </section>
     
 </div>
