@@ -1,3 +1,7 @@
+/*
+    - IMovie interface
+*/
+
 import { Injectable } from '@angular/core';
 import { IMovie } from './movie.interface';
 

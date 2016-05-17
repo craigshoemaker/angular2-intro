@@ -17,6 +17,8 @@ export class MoviesListComponent implements OnInit {
         this.movies = this._moviesService.getAll();
     }
     
+    /* add service to app.component.ts */
+    
     hasMovies(): boolean {
         return this.movies.length > 0;
     } 
